@@ -3,6 +3,7 @@ filetype plugin indent on
 set t_Co=256             
 syntax enable           
 colorscheme slate  
+:color slate
 set number            
 set laststatus=2     
 filetype indent on  
@@ -18,7 +19,5 @@ set shiftround
 set expandtab       
 set smarttab       
 set nowrap        
-
-
-
+set relativenumber 
 
