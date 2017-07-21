@@ -22,5 +22,8 @@ set nowrap
 set relativenumber 
 set so=20
 set wrap 
-set guioptions-=r 
-set guioptions-=L
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
+
