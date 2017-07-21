@@ -21,7 +21,7 @@ sudo apt-get upgrade
 
 # Python
 pip3 install --upgrade pip
-sudo pip3 install numpy 
+sudo pip3 install numpy scipy 
 
 # System settings
 sudo update-pciids
@@ -55,10 +55,10 @@ gsettings set com.canonical.indicator.sound preferred-media-players "['spotify.d
 
 # OpenCV
 #wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
-#unzip opencv.zip
 #wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+#unzip opencv.zip
 #unzip opencv_contrib.zip
-#cd ~/opencv-3.1.0/
+#cd opencv-3.1.0/
 #mkdir build
 #cd build
 #cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -71,5 +71,3 @@ gsettings set com.canonical.indicator.sound preferred-media-players "['spotify.d
 #make -j4
 #sudo make install
 #sudo ldconfig
-
- 
