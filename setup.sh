@@ -21,7 +21,7 @@ sudo apt-get upgrade
 
 # Python
 pip3 install --upgrade pip
-sudo pip3 install numpy scipy 
+sudo pip3 install numpy scipy sklearn h5py pillow bokeh Cython imutils seaborn statsmodels jupyter
 
 # System settings
 sudo update-pciids
