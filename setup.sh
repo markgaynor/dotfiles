@@ -1,29 +1,33 @@
 #!/bin/bash
 
-
 # Dotfiles
+echo "Linking dotfiles in ~/dotfiles to root..."
 touch .bashrc
 touch .vimrc
 bash ~/dotfiles/makesymlinks.sh
 
 # APT
-sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
-sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
-sudo add-apt-repository ppa:nathan-renniewaldock/flux
+echo "Installing APT packages..."
 sudo add-apt-repository ppa:noobslab/themes
 sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository ppa:nathan-renniewaldock/flux
+sudo add-apt-repository -y "deb http://dl.google.com/linux/chrome/deb/ stable main"
+sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free"
 sudo apt-get update
 sudo apt-get -y install vim-gtk3 git python3-pip build-essential cmake pkg-config \
     libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev \
     libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk-3-dev libatlas-base-dev gfortran \
-    google-chrome-stable  unity-tweak-tool fluxgui arc-theme arc-icons vlc spotify-client 
+    google-chrome-stable  unity-tweak-tool fluxgui arc-theme arc-icons vlc ttf-mscorefonts-installer \
+    spotify-client 
 sudo apt-get upgrade
 
 # Python
+echo "Configuring Python..."
 pip3 install --upgrade pip
 sudo pip3 install numpy scipy sklearn h5py pillow bokeh Cython imutils seaborn statsmodels jupyter
 
 # System settings
+echo "Configuring system settings..."
 sudo update-pciids
 xset mouse 2.0
 dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 36
@@ -38,6 +42,7 @@ gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 gsettings set com.canonical.indicator.sound interested-media-players "['spotify.desktop']"
 gsettings set com.canonical.indicator.sound preferred-media-players "['spotify.desktop']"
 
+#echo "Configuring GPU..."
 # NVIDIA drivers
 #sudo ubuntu-drivers devices
 #sudo apt-get install nvidia-[NUMBER] 
@@ -54,10 +59,13 @@ gsettings set com.canonical.indicator.sound preferred-media-players "['spotify.d
 #sudo pip3 install tensorflow-gpu
 
 # OpenCV
+#echo "Installing OpenCV..."
 #wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
 #wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
 #unzip opencv.zip
+#rm opencv.zip
 #unzip opencv_contrib.zip
+#rm opencv_contrib.zip
 #cd opencv-3.1.0/
 #mkdir build
 #cd build
@@ -71,3 +79,5 @@ gsettings set com.canonical.indicator.sound preferred-media-players "['spotify.d
 #make -j4
 #sudo make install
 #sudo ldconfig
+
+echo "Done!"
