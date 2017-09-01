@@ -21,6 +21,8 @@ set nowrap
 set relativenumber 
 set so=20
 set wrap 
+set backupdir=$TEMP//
+set directory=$TEMP//
 :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
