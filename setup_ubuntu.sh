@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Dotfiles
-echo "Linking dotfiles in ~/dotfiles to root..."
-touch .bashrc
-touch .vimrc
-bash ~/dotfiles/makesymlinks.sh
-
 # APT
 echo "Installing APT packages..."
 sudo add-apt-repository ppa:noobslab/themes
@@ -18,7 +12,7 @@ sudo apt-get -y install vim-gtk3 git python3-pip build-essential cmake pkg-confi
     libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev \
     libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk-3-dev libatlas-base-dev gfortran \
     google-chrome-stable  unity-tweak-tool fluxgui arc-theme arc-icons vlc ttf-mscorefonts-installer \
-    spotify-client 
+    spotify-client
 sudo apt-get upgrade
 
 # Python
@@ -46,7 +40,7 @@ gsettings set com.canonical.indicator.sound preferred-media-players "['spotify.d
 #echo "Configuring GPU..."
 # NVIDIA drivers
 #sudo ubuntu-drivers devices
-#sudo apt-get install nvidia-[NUMBER] 
+#sudo apt-get install nvidia-[NUMBER]
 
 # CUDA
 #sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev
